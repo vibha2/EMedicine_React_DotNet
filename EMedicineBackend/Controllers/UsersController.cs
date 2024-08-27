@@ -31,5 +31,17 @@ namespace EMedicineBackend.Controllers
             return response;
         }
 
+        [HttpPost]
+        [Route("login")]
+        public Response login(string Email, string Password)
+        {
+            Response response = new Response();
+            DAL dal = new DAL();
+
+            response = dal.login(Email, Password, _configuration);
+
+            return response;
+        }
+
     }
 }
